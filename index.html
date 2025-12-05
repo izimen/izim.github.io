@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Twoje Imię/Nick] - Portfolio</title>
+    <title>Siema</title>
     <style>
         /* --- PROSTY CSS --- */
         :root {
             --bg-color: #0f172a;       /* Ciemne tło */
-            --card-bg: #1e293b;        /* Tło kart */
+            --card-bg: #1e293b;        /* Tło elementów */
             --text-main: #f8fafc;      /* Główny kolor tekstu */
             --text-muted: #94a3b8;     /* Szary tekst */
             --accent: #38bdf8;         /* Kolor akcentu (niebieski) */
@@ -25,107 +25,99 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         a {
             text-decoration: none;
             color: var(--accent);
             transition: 0.3s;
+            font-weight: 500;
         }
 
         a:hover {
             opacity: 0.8;
+            text-decoration: underline;
         }
 
         /* --- UKŁAD --- */
         .container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
             padding: 2rem;
+            flex: 1;
         }
 
         /* --- HEADER --- */
         header {
             text-align: center;
-            padding: 4rem 0;
+            padding: 4rem 0 3rem 0;
             border-bottom: 1px solid var(--card-bg);
+            margin-bottom: 3rem;
         }
 
         h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .subtitle {
             color: var(--text-muted);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* --- SOCIAL LINKS --- */
         .socials {
-            margin-top: 1.5rem;
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2rem;
+            font-size: 1.1rem;
         }
 
-        /* --- SEKCJE --- */
+        /* --- SEKCJA O MNIE --- */
         section {
-            padding: 3rem 0;
+            padding-bottom: 3rem;
         }
 
         h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
-            border-left: 4px solid var(--accent);
-            padding-left: 10px;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            line-height: 1.2;
         }
 
-        /* --- GRID PROJEKTÓW --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (min-width: 600px) {
-            .projects-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid transparent;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-
-        .project-card h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        p {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            text-align: justify;
             margin-bottom: 1rem;
         }
 
-        /* --- STOPKA --- */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            border-top: 1px solid var(--card-bg);
-            margin-top: 2rem;
+        /* --- STYL DLA UKRYTEGO SŁOWA (SPOILER) --- */
+        .spoiler {
+            background-color: var(--accent); /* Tło zakrywające */
+            color: var(--accent);            /* Tekst w kolorze tła (niewidoczny) */
+            padding: 0 6px;
+            border-radius: 4px;
+            cursor: pointer;                 /* Łapka po najechaniu */
+            user-select: none;               /* Blokada zaznaczania tekstu */
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .spoiler:hover {
+            opacity: 0.8;
+        }
+
+        /* Klasa dodawana po kliknięciu (odkrywa tekst) */
+        .spoiler.revealed {
+            background-color: rgba(56, 189, 248, 0.2); /* Lekko przezroczyste tło */
+            color: var(--text-main);                   /* Normalny kolor tekstu */
+            cursor: default;
         }
     </style>
 </head>
@@ -135,8 +127,8 @@
         
         <!-- NAGŁÓWEK -->
         <header>
-            <h1>[Twoje Imię / Nick]</h1>
-            <p class="subtitle">[Krótki opis, np. Frontend Developer / Student / Pasjonat Pythona]</p>
+            <h1>Kuba</h1>
+            <p class="subtitle">[Nudze sie]</p>
             
             <div class="socials">
                 <a href="https://github.com/[TwójLogin]" target="_blank">GitHub</a>
@@ -149,52 +141,28 @@
         <section id="about">
             <h2>O mnie</h2>
             <p>
-                [Tutaj wpisz kilka zdań o sobie. Czym się zajmujesz, jakich technologii używasz i co Cię interesuje. To miejsce na krótki opis Twoich umiejętności.]
+                ndidze sie 
+            </p>
+            <p>
+                Kliknij w to szmato
             </p>
         </section>
 
-        <!-- PROJEKTY -->
-        <section id="projects">
-            <h2>Moje Projekty</h2>
-            <div class="projects-grid">
-                
-                <!-- Projekt 1 -->
-                <div class="project-card">
-                    <h3>[Nazwa Projektu 1]</h3>
-                    <p>[Krótki opis co ten projekt robi i jakich technologii użyłeś.]</p>
-                    <a href="#">Zobacz kod &rarr;</a>
-                </div>
-
-                <!-- Projekt 2 -->
-                <div class="project-card">
-                    <h3>[Nazwa Projektu 2]</h3>
-                    <p>[Krótki opis co ten projekt robi i jakich technologii użyłeś.]</p>
-                    <a href="#">Zobacz kod &rarr;</a>
-                </div>
-
-                <!-- Projekt 3 -->
-                <div class="project-card">
-                    <h3>[Nazwa Projektu 3]</h3>
-                    <p>[Krótki opis co ten projekt robi i jakich technologii użyłeś.]</p>
-                    <a href="#">Zobacz kod &rarr;</a>
-                </div>
-
-                <!-- Projekt 4 -->
-                <div class="project-card">
-                    <h3>[Nazwa Projektu 4]</h3>
-                    <p>[Krótki opis co ten projekt robi i jakich technologii użyłeś.]</p>
-                    <a href="#">Zobacz kod &rarr;</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- STOPKA -->
-        <footer>
-            <p>&copy; 2024 [Twoje Imię]. Wszelkie prawa zastrzeżone.</p>
-        </footer>
-
     </div>
+
+    <!-- SKRYPT DO OBSŁUGI KLIKNIĘCIA -->
+    <script>
+        // Znajdź wszystkie elementy z klasą 'spoiler'
+        const spoilers = document.querySelectorAll('.spoiler');
+
+        // Dla każdego elementu dodaj nasłuchiwanie kliknięcia
+        spoilers.forEach(element => {
+            element.addEventListener('click', function() {
+                // Dodaj klasę 'revealed', która zmienia wygląd
+                this.classList.add('revealed');
+            });
+        });
+    </script>
 
 </body>
 </html>
