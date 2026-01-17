@@ -186,47 +186,10 @@ h1 {
     }
 }
 
-/* Gradient Border Animation */
-.border-animation {
-    position: absolute;
-    width: 600px;
-    height: 200px;
-    border: 3px solid transparent;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #667eea, #764ba2) border-box;
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: rotate-border 4s linear infinite;
-    z-index: 5;
-}
-
-@keyframes rotate-border {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
-    }
-}
-
-@keyframes wave {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
         font-size: 3rem;
-    }
-    .border-animation {
-        width: 90%;
-        height: 150px;
     }
     .circle1, .circle2, .circle3 {
         display: none;
